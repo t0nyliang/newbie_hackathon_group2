@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lochan's Page</title>
+    <link rel="stylesheet" href="/static/lochan.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 id="name">Loading...</h1>
+        <h2 id="title">Loading...</h2>
+      </header>
+
+      <main>
+        <div class="info-section">
+          <h3>About Me</h3>
+          <p id="bio">Loading...</p>
+        </div>
+
+        <div class="info-section">
+          <h3>Skills</h3>
+          <p id="skills">Loading...</p>
+        </div>
+
+        <div class="info-section">
+          <h3>Interests</h3>
+          <p id="interests">Loading...</p>
+        </div>
+
+        <div class="info-section">
+          <h3>Contact</h3>
+          <p id="contact">Loading...</p>
+        </div>
+
+        <div class="button-container">
+          <button id="loadBtn" class="load-button">Load My Information</button>
+          <button id="refreshBtn" class="refresh-button" style="display: none;">Refresh Data</button>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+          <div class="spinner"></div>
+          <p>Loading data...</p>
+        </div>
+      </main>
+
+      <footer>
+        <button onclick="location.href='http://localhost:8000/home/index.html'">Back to Home Page</button>
+      </footer>
+    </div>
+
+    <script>
+      const loadBtn = document.getElementById('loadBtn');
+      const refreshBtn = document.getElementById('refreshBtn');
+      const loading = document.getElementById('loading');
+
+      function showLoading() {
+        loading.style.display = 'block';
+        loadBtn.style.display = 'none';
+        refreshBtn.style.display = 'none';
+      }
+
+      function hideLoading() {
+        loading.style.display = 'none';
+        loadBtn.style.display = 'none';
+        refreshBtn.style.display = 'inline-block';
+      }
+
+      function loadData() {
+        showLoading();
+        
+        fetch('http://localhost:5001/api/lochan/info')
+          .then(response => response.json())
+          .then(data => {
+            if (data.error) {
+              alert('Error loading data: ' + data.error);
+              hideLoading();
+              loadBtn.style.display = 'inline-block';
+              return;
+            }
+
+            // Update the page with loaded data
+            document.getElementById('name').textContent = data.name;
+            document.getElementById('title').textContent = data.title;
+            document.getElementById('bio').textContent = data.bio;
+            document.getElementById('skills').textContent = data.skills;
+            document.getElementById('interests').textContent = data.interests;
+            document.getElementById('contact').textContent = data.contact_email;
+
+            hideLoading();
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('Error loading data. Please try again.');
+            hideLoading();
+            loadBtn.style.display = 'inline-block';
+          });
+      }
+
+      loadBtn.addEventListener('click', loadData);
+      refreshBtn.addEventListener('click', loadData);
+    </script>
+  </body>
+</html>
