@@ -7,6 +7,30 @@ app = Flask(__name__,
             template_folder='templates',
             static_folder='static')
 
+# Serve static files from the main project directory
+from flask import send_from_directory
+import os
+
+@app.route('/home/<path:filename>')
+def serve_home_static(filename):
+    return send_from_directory('../home', filename)
+
+@app.route('/emily/<path:filename>')
+def serve_emily_static(filename):
+    return send_from_directory('../emily', filename)
+
+@app.route('/kennedy/<path:filename>')
+def serve_kennedy_static(filename):
+    return send_from_directory('../kennedy', filename)
+
+@app.route('/naisha/<path:filename>')
+def serve_naisha_static(filename):
+    return send_from_directory('../naisha', filename)
+
+@app.route('/tony/<path:filename>')
+def serve_tony_static(filename):
+    return send_from_directory('../tony', filename)
+
 # Database setup
 def init_db():
     conn = sqlite3.connect('lochan_data.db')
@@ -46,9 +70,38 @@ init_db()
 def home():
     return render_template('home.html')
 
+@app.route('/home/')
+def home_redirect():
+    return render_template('home.html')
+
+@app.route('/home/index.html')
+def home_index():
+    return render_template('home.html')
+
 @app.route('/lochan')
 def lochan_page():
     return render_template('lochan.html')
+
+@app.route('/lochan/lochan.html')
+def lochan_original():
+    return render_template('lochan.html')
+
+# Serve other team member pages
+@app.route('/emily/emily.html')
+def emily_page():
+    return send_from_directory('../emily', 'emily.html')
+
+@app.route('/kennedy/kennedy.html')
+def kennedy_page():
+    return send_from_directory('../kennedy', 'kennedy.html')
+
+@app.route('/naisha/naisha.html')
+def naisha_page():
+    return send_from_directory('../naisha', 'naisha.html')
+
+@app.route('/tony/tony.html')
+def tony_page():
+    return send_from_directory('../tony', 'tony.html')
 
 @app.route('/api/lochan/info')
 def get_lochan_info():
@@ -98,4 +151,4 @@ def update_lochan_info():
     return jsonify({'message': 'Information updated successfully'})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001, host='127.0.0.1')
+    app.run(debug=True, port=8000, host='127.0.0.1')
