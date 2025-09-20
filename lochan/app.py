@@ -53,10 +53,10 @@ def init_db():
     cursor.execute('''
         INSERT OR REPLACE INTO personal_info 
         (id, name, title, bio, skills, interests, contact_email)
-        VALUES (1, 'Lochan', 'Freshman studying Data Science', 
-                'A deep dive into one of history''s most controversial events: the assassination of President John F. Kennedy. This page explores the facts, theories, and my personal analysis of what happened on November 22, 1963.',
-                'Historical Research, Critical Analysis, Data Science, Python, JavaScript',
-                'JFK Assassination, Conspiracy Theories, American History, Cold War Politics',
+        VALUES (1, 'Background', 'On November 22, 1963, at 12:30 PM CST, President John F. Kennedy was assassinated while riding in a motorcade through Dealey Plaza in Dallas, Texas. The motorcade was traveling from Love Field airport to the Dallas Trade Mart, where Kennedy was scheduled to speak.', 
+                "According to the official Warren Commission Report, Lee Harvey Oswald was identified as the lone gunman responsible for JFK's assassination.",
+                'Ballistics, Witnesses, Government Investigation',
+                'Lyndon Baines Johnson',
                 'lochan@example.com')
     ''')
     
