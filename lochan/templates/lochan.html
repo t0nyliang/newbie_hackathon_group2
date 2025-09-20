@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFK Assassination Analysis</title>
+    <link rel="stylesheet" href="/static/lochan.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The JFK Assassination</h1>
+            <p>November 22, 1963 - Dallas, Texas</p>
+        </header>
+
+        <main>
+            <div class="info-section">
+                <h2>The Files</h2>
+                <button id="loadInfoBtn" class="btn">Load Case Information</button>
+                <div id="infoDisplay" class="info-display">
+                    <!-- Information will be loaded here -->
+                </div>
+            </div>
+
+            <div class="analysis-sections">
+                <section class="analysis-section" id="basic-info">
+                    <h2>Basic Information</h2>
+                    <div class="content">
+                        <h3>The Event</h3>
+                        <p>On November 22, 1963, at 12:30 PM CST, President John F. Kennedy was assassinated while riding in a motorcade through Dealey Plaza in Dallas, Texas. The motorcade was traveling from Love Field airport to the Dallas Trade Mart, where Kennedy was scheduled to speak.</p>
+                        
+                        <h3>Key Details</h3>
+                        <ul>
+                            <li><strong>Time:</strong> 12:30 PM CST</li>
+                            <li><strong>Location:</strong> Dealey Plaza, Dallas, Texas</li>
+                            <li><strong>Vehicle:</strong> 1961 Lincoln Continental convertible</li>
+                            <li><strong>Route:</strong> Main Street to Houston Street to Elm Street</li>
+                            <li><strong>Witnesses:</strong> Hundreds of people in the plaza</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="analysis-section" id="stated-suspect">
+                    <h2>Stated Suspect</h2>
+                    <div class="content">
+                        <h3>Lee Harvey Oswald</h3>
+                        <p>According to the official Warren Commission Report, Lee Harvey Oswald was identified as the lone gunman responsible for Kennedy's assassination.</p>
+                        
+                        <h3>Oswald's Background</h3>
+                        <ul>
+                            <li><strong>Born:</strong> October 18, 1939, in New Orleans</li>
+                            <li><strong>Military Service:</strong> U.S. Marine Corps (1956-1959)</li>
+                            <li><strong>Defection:</strong> Moved to Soviet Union in 1959, returned in 1962</li>
+                            <li><strong>Employment:</strong> Worked at the Texas School Book Depository</li>
+                            <li><strong>Arrest:</strong> November 22, 1963, at 1:50 PM</li>
+                            <li><strong>Death:</strong> November 24, 1963, shot by Jack Ruby</li>
+                        </ul>
+
+                        <h3>Evidence Against Oswald</h3>
+                        <ul>
+                            <li>Rifle found on 6th floor of Texas School Book Depository</li>
+                            <li>Fingerprints on the rifle and boxes</li>
+                            <li>Witnesses placed him on the 6th floor</li>
+                            <li>Photographic evidence of him with the rifle</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="analysis-section" id="issues">
+                    <h2>Issues & Controversies</h2>
+                    <div class="content">
+                        <h3>Ballistics Questions</h3>
+                        <ul>
+                            <li><strong>Magic Bullet Theory:</strong> Single bullet causing 7 wounds in Kennedy and Connally</li>
+                            <li><strong>Timing:</strong> Oswald's ability to fire 3 shots in 5.6 seconds</li>
+                            <li><strong>Trajectory:</strong> Downward angle from 6th floor window</li>
+                            <li><strong>Bullet Fragments:</strong> Inconsistent with single shooter theory</li>
+                        </ul>
+
+                        <h3>Witness Testimony</h3>
+                        <ul>
+                            <li>Multiple witnesses reported shots from different locations</li>
+                            <li>Grassy knoll witnesses claimed shots from the front</li>
+                            <li>Inconsistent descriptions of the shooter</li>
+                            <li>Many witnesses changed their stories over time</li>
+                        </ul>
+
+                        <h3>Government Investigation Concerns</h3>
+                        <ul>
+                            <li>Warren Commission's limited scope and time constraints</li>
+                            <li>Classified documents still unreleased</li>
+                            <li>FBI and CIA withholding information</li>
+                            <li>Evidence mishandling and chain of custody issues</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="analysis-section" id="what-i-believe">
+                    <h2>What I Believe</h2>
+                    <div class="content">
+                        <h3>My Analysis</h3>
+                        <p>LBJ was the mastermind, with help from the CIA.</p>
+
+                        <h3>Key Points Supporting Conspiracy Theory</h3>
+                        <ul>
+                            <li><strong>Multiple Shooters:</strong> The trajectory and timing of shots suggest more than one gunman</li>
+                            <li><strong>Oswald's Capabilities:</strong> His marksmanship skills were questionable for such precise shots</li>
+                            <li><strong>Government Cover-up:</strong> Too many classified documents and suspicious behavior</li>
+                            <li><strong>Ruby's Motive:</strong> Jack Ruby's murder of Oswald prevented a proper trial</li>
+                            <li><strong>Witness Intimidation:</strong> Many witnesses died under suspicious circumstances</li>
+                        </ul>
+
+                        <h3>Most Likely Scenario</h3>
+                        <p>Other people that could have been involved:</p>
+                        <ul>
+                            <li>Anti-Castro Cuban exiles</li>
+                            <li>Organized crime figures</li>
+                            <li>Military-industrial complex interests</li>
+                            <li>Intelligence agency operatives</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <a href="/home/index.html" class="btn">Back to Home Page</a>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('loadInfoBtn').addEventListener('click', async function() {
+            try {
+                const response = await fetch('/api/lochan/info');
+                const data = await response.json();
+                
+                const infoDisplay = document.getElementById('infoDisplay');
+                infoDisplay.innerHTML = `
+                    <div class="info-item">
+                        <h3>${data.name}</h3>
+                        <p><strong>Basic Information:</strong> ${data.title}</p>
+                        <p><strong>Stated Suspect:</strong> ${data.bio}</p>
+                        <p><strong>Issues:</strong> ${data.skills}</p>
+                        <p><strong>What I Believe:</strong> ${data.interests}</p>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error loading information:', error);
+                document.getElementById('infoDisplay').innerHTML = '<p>Error loading information. Please try again.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
