@@ -51,6 +51,29 @@ main {
   background-color: #1b5e20;
 }
 
+.image-button {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.image-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-color: #4CAF50;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+
 footer {
   margin-top: 40px;
   padding: 10px 0;
