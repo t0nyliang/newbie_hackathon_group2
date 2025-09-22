@@ -5,17 +5,210 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Kennedy's Page</title>
-    <link rel="stylesheet" href="kennedy.css" />
-  </head>
-  <body>
-    <h1>Kennedy</h1>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Kennedy's Albums</title>
+  <link rel="stylesheet" href="kennedy.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1> kennedy's tunes !</h1>
+  </header>
+
+  <!-- Album Gallery -->
+  <main class="gallery">
+    <div class="album" onclick="openModal(0)">
+      <img src="images/amaraae.png" alt="Fountain Baby by Amaraae">
+      <h2>Fountain Baby by Amaarae</h2>
+    </div>
+
+    <div class="album" onclick="openModal(1)">
+      <img src="images/fleetwood.jpg" alt="Album 2">
+      <h2>Rumors by Fleetwood Mac</h2>
+    </div>
+
+    <div class="album" onclick="openModal(2)">
+      <img src="images/internet.jpg" alt="Album 3">
+      <h2>Ego Death by The Internet</h2>
+    </div>
+
+    <div class="album" onclick="openModal(3)">
+      <img src="images/R-58438-1740444028-9597.jpg" alt="Album 3">
+      <h2>Milk and Kisses by Cocteau Twins</h2>
+    </div>
+
+    <div class="album" onclick="openModal(4)">
+      <img src="images/miseducation-lauryn-hill.jpg.webp" alt="Album 3">
+      <h2>The Miseducation of Lauryn Hill</h2>
+    </div>
+
+    <div class="album" onclick="openModal(5)">
+      <img src="images/Negro_Swan.jpg" alt="Album 3">
+      <h2>Negro Swan by Blood Orange</h2>
+    </div>
+
+    <div class="album" onclick="openModal(6)">
+      <img src="images/ab67616d0000b2737aede4855f6d0d738012e2e5.jpg" alt="Album 3">
+      <h2>Channel Orange by Frank Ocean</h2>
+    </div>
+
+
+    <div class="album" onclick="openModal(7)">
+      <img src="images/Mac_Miller_-_The_Divine_Feminine.png" alt="Album 3">
+      <h2>The Divine Feminine</h2>
+    </div>
+
+    <div class="album" onclick="openModal(8)">
+      <img src="images/Mk.gee_-_Two_Star_and_the_Dream_Police_(Album_Cover).jpg" alt="Album 3">
+      <h2>Two Star & The Dream Police</h2>
+    </div>
+
+    <div class="album" onclick="openModal(9)">
+      <img src="images/marias.jpg" alt="Album 3">
+      <h2>Submarine by The Marias</h2>
+    </div>
+  </main>
+
+
+
+  <!-- Modal -->
+  <div id="albumModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+
+      <img id="modalImg" src="" alt="Album">
+      <h2 id="modalTitle"></h2>
+      <p><strong>Artist:</strong> <span id="modalArtist"></span></p>
+      <p><strong>Genre:</strong> <span id="modalYear"></span></p>
+      <p><strong>Best Songs:</strong> <span id="modalNotes"></span></p>
+
+      <div class="nav-buttons">
+        <button onclick="prevAlbum()">⬅ Prev</button>
+        <button onclick="nextAlbum()">Next ⮕</button>
+      </div>
+    </div>
+  </div>
+
   <footer>
-    <button onclick="location.href='/home/index.html'">
-      Back to Home Page
-    </button>
+    <button onclick="location.href='/home/index.html'">⬅ Back to Home Page</button>
   </footer>
+
+  <script>
+    // Album Data
+    const albums = [
+      {
+        img: "images/amaarae.png",
+        title: "Fountain Baby",
+        artist: "Amaarae",
+        year: "R&B pop",
+        notes: "Aquamarine Loves Ecstacy" 
+      },
+      {
+        img: "album2.jpg",
+        title: "Rumors",
+        artist: "Fleetwood Mac",
+        year: "Soft/Pop Rock",
+        notes: "Get Away, Palace/Curse"
+      },
+      {
+        img: "album2.jpg",
+        title: "Ego Death",
+        artist: "The Internet",
+        year: "R&B/Soul",
+        notes: "Get Away, Palace/Curse"
+      },
+      {
+
+        img: "album3.jpg",
+        title: "Milk and Kisses",
+        artist: "Cocteau Twins",
+        year: "Dream Pop/Alt Rock/Gothic Rock",
+        notes: "Rilkean Heart, Serpentskirt "
+      },
+      {
+
+        img: "album3.jpg",
+        title: "The Miseducation of Lauryn Hill",
+        artist: "Lauryn Hill",
+        year: "Neo-soul",
+        notes: "To Zion, Tell Him"
+      },
+      {
+        img: "album3.jpg",
+        title: "Negro Swan",
+        artist: "Blood Orange",
+        year: "Psychedelic Pop, Alternative R&B",
+        notes: "Charcoal Baby, Out of Your League"
+      },
+      {
+        img: "album3.jpg",
+        title: "Channel ORANGE",
+        artist: "Frank Ocean",
+        year: "Alternative R&B",
+        notes: "Golden Girl, End, Pink Matter"
+      },
+      {
+        img: "album3.jpg",
+        title: "The Divine Feminine",
+        artist: "Mac Miller",
+        year: "Jazz Rap, Alt Hip-hop",
+        notes: "Skin, Cinderella, God is Fair, Sexy Nasty" 
+      },
+      {
+        img: "album3.jpg",
+        title: "Two Star & The Dream Police",
+        artist: "Mk.gee",
+        year: "Neo-Psychedelia, Soft Rock ",
+        notes: "Dream police, You got it"
+      },
+      {
+        img: "album3.jpg",
+        title: "Submarine",
+        artist: "The Marias",
+        year: "dream pop, indie pop, synth pop",
+        notes: "Echo, Love You Anyway, Lejos de Ti" 
+      },
+    ];
+
+    let currentIndex = 0;
+
+    function openModal(index) {
+      currentIndex = index;
+      updateModal();
+      document.getElementById("albumModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("albumModal").style.display = "none";
+    }
+
+    function updateModal() {
+      const album = albums[currentIndex];
+      document.getElementById("modalImg").src = album.img;
+      document.getElementById("modalTitle").textContent = album.title;
+      document.getElementById("modalArtist").textContent = album.artist;
+      document.getElementById("modalYear").textContent = album.year;
+      document.getElementById("modalNotes").textContent = album.notes;
+    }
+
+    function prevAlbum() {
+      currentIndex = (currentIndex - 1 + albums.length) % albums.length;
+      updateModal();
+    }
+
+    function nextAlbum() {
+      currentIndex = (currentIndex + 1) % albums.length;
+      updateModal();
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById("albumModal");
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
 </html>

@@ -1,0 +1,135 @@
+/* General reset + font */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+    color: #333;
+  }
+  
+  header {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    padding: 30px;
+    text-align: center;
+    color: white;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 30px;
+  }
+  
+  .album {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .album img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease;
+  }
+  
+  .album:hover {
+    transform: translateY(-8px);
+  }
+  
+  .album:hover img {
+    transform: scale(1.05);
+  }
+  
+  .album h2 {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+  }
+  
+  .modal-content {
+    background: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .modal-content img {
+    width: 60%;
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+  
+  .close {
+    color: #888;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #333;
+  }
+  
+  .nav-buttons {
+    margin-top: 15px;
+  }
+  
+  .nav-buttons button {
+    background: #a18cd1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .nav-buttons button:hover {
+    background: #8b6fc6;
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #f4f4f4;
+  }
+  footer button {
+    background: #a18cd1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  footer button:hover {
+    background: #8b6fc6;
+    transform: scale(1.05);
+  }
+  
