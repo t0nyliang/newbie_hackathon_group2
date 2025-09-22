@@ -1,0 +1,52 @@
+<!-- 
+    To serve this page locally with Python 3 HTTP server, run:
+    python3 -m http.server 8080 --bind 127.0.0.1 in newbie_hackathon_group2
+    Then open: http://127.0.0.1:8080/emily.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emily Zhou – Tech & Creativity</title>
+  <link rel="stylesheet" href="emily.css">
+</head>
+<body>
+  <!-- Header with Home -->
+  <header>
+    <a href='/home/index.html' class="home-btn">🏠 Home</a>
+    <h1 class="page-title">Emily Zhou Website Page</h1>
+  </header>
+
+  <!-- Main Section -->
+  <main class="member">
+    <button class="btn emily-btn" onclick="loadImages()">✨ Load My Gallery</button>
+    <div id="gallery" class="gallery emily-gallery"></div>
+  </main>
+
+  <script>
+    function loadImages() {
+      const gallery = document.getElementById("gallery");
+      gallery.innerHTML = ""; // clear old images
+
+      // 👉 Replace these URLs with your own photo filenames or links
+      const images = [
+        "/emily/IMG_1303.jpeg",
+        "/emily/IMG_224.jpeg",
+        "/emily/IMG_890.jpeg"
+      ];
+
+      images.forEach(src => {
+        const imgCard = document.createElement("div");
+        imgCard.className = "img-card";
+
+        const img = document.createElement("img");
+        img.src = src;
+
+        imgCard.appendChild(img);
+        gallery.appendChild(imgCard);
+      });
+    }
+  </script>
+</body>
+</html>
