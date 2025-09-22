@@ -15,6 +15,14 @@ import os
 def serve_home_static(filename):
     return send_from_directory('../home', filename)
 
+@app.route('/style.css')
+def serve_home_css():
+    return send_from_directory('../home', 'style.css')
+
+@app.route('/group2.jpg')
+def serve_home_image():
+    return send_from_directory('../home', 'group2.jpg')
+
 @app.route('/emily/<path:filename>')
 def serve_emily_static(filename):
     return send_from_directory('../emily', filename)
@@ -68,15 +76,11 @@ init_db()
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return send_from_directory('../home', 'index.html')
 
 @app.route('/home/')
 def home_redirect():
-    return render_template('home.html')
-
-@app.route('/home/index.html')
-def home_index():
-    return render_template('home.html')
+    return send_from_directory('../home', 'index.html')
 
 @app.route('/lochan')
 def lochan_page():
