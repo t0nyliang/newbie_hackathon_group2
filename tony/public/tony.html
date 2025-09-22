@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tony!!!</title>
+  <link rel="stylesheet" href="tony.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <!-- Left logo links to index page -->
+    <a href="../../home/index.html" class="logo-link">
+      <img src="images/TonyFace.png" alt="Home" class="header-logo left-logo">
+    </a>
+
+    <!-- Center image -->
+    <img src="images/logo.png" alt="Center Logo" class="header-logo center-logo">
+
+    <!-- Optional gem counter on the right -->
+    <div id="gem-counter"><img src="images/gem.png" alt="Gem" class="gem"><span id="gem-count">20</span></div>
+  </header>
+
+  <!-- ICONS SECTION (Interactive Game Placeholder) -->
+  <section id="game-section">
+    <h2>Pick the Counter!</h2>
+    <div id="presented-card"></div>
+    <div id="choices" class="choice-grid"></div>
+    <div id="result"></div>
+    <button id="next-round">Next Round</button>
+  </section>
+
+  <!-- VIDEO SECTION -->
+  <section id="video">
+    <h2>Learn From The Pro</h2>
+    <div class="video-flex">
+      <div class="deck-container">
+        <div class="deck">
+          <div class="card-grid">
+            <img src="images/FirecrackerCard.png" alt="Firecracker" class="deck-card">
+            <img src="images/TeslaCard.png" alt="Tesla" class="deck-card">
+            <img src="images/HogRiderCard.png" alt="Hog Rider" class="deck-card">
+            <img src="images/GoblinsCard.png" alt="Goblins" class="deck-card">
+            <img src="images/TheLogCard.png" alt="Log" class="deck-card">
+            <img src="images/EarthquakeCard.png" alt="Earthquake" class="deck-card">
+            <img src="images/ValkyrieCard.png" alt="Valkyrie" class="deck-card">
+            <img src="images/PrinceCard.png" alt="Prince" class="deck-card">
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <video controls width="400">
+          <source src="videos/Gameplay.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP SECTION -->
+  <section id="shop">
+    <h2>Emote Shop</h2>
+    <div class="shop-grid">
+      <div class="emote" data-emote="Mimimi">
+        <img src="images/mimimi.png" alt="Mimimi">
+        <button class="buy-btn" data-price="40">Buy (40💎)</button>
+      </div>
+      <div class="emote" data-emote="yawn">
+        <img src="images/PrincessYawning.png" alt="Yawning">
+        <button class="buy-btn" data-price="30">Buy (30💎)</button>
+      </div>
+      <div class="emote" data-emote="nosepick">
+        <img src="images/freakytony.png" alt="freakytony">
+        <button class="buy-btn" data-price="20">Buy (20💎)</button>
+      </div>
+      <div class="emote" data-emote="trophy">
+        <img src="images/CleaningTrophy.png" alt="Trophy">
+        <button class="buy-btn" data-price="50">Buy (50💎)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- POST EMOTES SECTION -->
+  <section id="message-board">
+    <h2>Emote Message Board</h2>
+
+    <!-- Post form -->
+    <form id="postForm" onsubmit="postMessage(event)">
+      <input type="text" id="playerName" placeholder="Enter your name" required />
+
+      <!-- Emote Picker -->
+      <div id="emotePicker" class="emote-picker">
+        <!-- Default 4 emotes (player always has these) -->
+        <label>
+          <input type="radio" name="emote" value="laughing" required />
+          <img src="images/laughing.png" alt="Laughing" />
+        </label>
+        <label>
+          <input type="radio" name="emote" value="cry" />
+          <img src="images/cry.jpeg" alt="Crying" />
+        </label>
+        <label>
+          <input type="radio" name="emote" value="angry" />
+          <img src="images/angry.jpg" alt="Angry" />
+        </label>
+        <label>
+          <input type="radio" name="emote" value="thumbsup" />
+          <img src="images/thumbsup.png" alt="Thumbs Up" />
+        </label>
+        <!-- More emotes will unlock dynamically via JS -->
+      </div>
+
+      <button type="submit">Post</button>
+    </form>
+
+    <!-- Display posts -->
+    <div id="posts" class="posts"></div>
+  </section>
+
+</body>
+<script src="tony.js" defer></script>
+
+</html>

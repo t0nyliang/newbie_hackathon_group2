@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Home Page</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <header>
-      <h1>Group 2 Home Page</h1>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <title>Home Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <main>
-      <img src="group2.jpg" class="banner-image" />
+<body>
+  <header>
+    <h1>Group 2 Home Page</h1>
+  </header>
 
-      <div class="button-group">
-        <button onclick="location.href='/emily/emily.html'">Emily</button>
-        <button onclick="location.href='/kennedy/kennedy.html'">Kennedy</button>
-        <button onclick="location.href='http://localhost:8000/lochan'">Lochan</button>
-        <button onclick="location.href='/naisha/naisha.html'">Naisha</button>
-        <button onclick="location.href='/tony/tony.html'">Tony</button>
-      </div>
-    </main>
+  <main>
+    <img src="group2.jpg" class="banner-image" alt="Group 2 Team Photo" />
 
-    <footer></footer>
-  </body>
+    <div class="button-group">
+      <button onclick="location.href='/emily/emily.html'" class="team-member-btn">
+        <span>Emily</span>
+      </button>
+      <button onclick="location.href='/kennedy/kennedy.html'" class="team-member-btn">
+        <span>Kennedy</span>
+      </button>
+      <button onclick="location.href='/lochan'" class="team-member-btn">
+        <img src="/static/lochan_profile.jpg" alt="Lochan" class="profile-img" />
+        <span>Lochan</span>
+      </button>
+      <button onclick="location.href='/naisha/naisha.html'" class="team-member-btn">
+        <span>Naisha</span>
+      </button>
+      <button onclick="location.href='/tony/public/tony.html'" class="team-member-btn">
+        <span>Tony</span>
+      </button>
+    </div>
+  </main>
+
+  <footer></footer>
+</body>
+
 </html>
