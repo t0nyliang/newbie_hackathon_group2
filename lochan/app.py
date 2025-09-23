@@ -15,6 +15,8 @@ import os
 def serve_home_static(filename):
     return send_from_directory('../home', filename)
 
+<<<<<<< HEAD
+=======
 @app.route('/style.css')
 def serve_home_css():
     return send_from_directory('../home', 'style.css')
@@ -23,6 +25,7 @@ def serve_home_css():
 def serve_home_image():
     return send_from_directory('../home', 'group2.jpg')
 
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
 @app.route('/emily/<path:filename>')
 def serve_emily_static(filename):
     return send_from_directory('../emily', filename)
@@ -44,6 +47,30 @@ def init_db():
     conn = sqlite3.connect('lochan_data.db')
     cursor = conn.cursor()
     
+<<<<<<< HEAD
+    # Create table for personal information
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS personal_info (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            title TEXT,
+            bio TEXT,
+            skills TEXT,
+            interests TEXT,
+            contact_email TEXT
+        )
+    ''')
+    
+    # Insert sample data
+    cursor.execute('''
+        INSERT OR REPLACE INTO personal_info 
+        (id, name, title, bio, skills, interests, contact_email)
+        VALUES (1, 'Lochan', 'Freshman studying Data Science', 
+                'A deep dive into one of history''s most controversial events: the assassination of President John F. Kennedy. This page explores the facts, theories, and my personal analysis of what happened on November 22, 1963.',
+                'Historical Research, Critical Analysis, Data Science, Python, JavaScript',
+                'JFK Assassination, Conspiracy Theories, American History, Cold War Politics',
+                'lochan@example.com')
+=======
     # Create table for JFK case information
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS jfk_case_info (
@@ -67,6 +94,7 @@ def init_db():
                 '<h3>Ballistics Questions</h3><ul><li><strong>Magic Bullet Theory:</strong> Single bullet causing 7 wounds in Kennedy and Connally</li><li><strong>Timing:</strong> Oswald''s ability to fire 3 shots in 5.6 seconds</li><li><strong>Trajectory:</strong> Downward angle from 6th floor window</li><li><strong>Bullet Fragments:</strong> Inconsistent with single shooter theory</li></ul><h3>Witness Testimony</h3><ul><li>Multiple witnesses reported shots from different locations</li><li>Grassy knoll witnesses claimed shots from the front</li><li>Inconsistent descriptions of the shooter</li><li>Many witnesses changed their stories over time</li></ul><h3>Government Investigation Concerns</h3><ul><li>Warren Commission''s limited scope and time constraints</li><li>Classified documents still unreleased</li><li>FBI and CIA withholding information</li><li>Evidence mishandling and chain of custody issues</li></ul>',
                 
                 '<h3>My Analysis</h3><p>LBJ was the mastermind, with help from the CIA.</p><h3>Key Points Supporting Conspiracy Theory</h3><ul><li><strong>Multiple Shooters:</strong> The trajectory and timing of shots suggest more than one gunman</li><li><strong>Oswald''s Capabilities:</strong> His marksmanship skills were questionable for such precise shots</li><li><strong>Government Cover-up:</strong> Too many classified documents and suspicious behavior</li><li><strong>Ruby''s Motive:</strong> Jack Ruby''s murder of Oswald prevented a proper trial</li><li><strong>Witness Intimidation:</strong> Many witnesses died under suspicious circumstances</li></ul><h3>Most Likely Scenario</h3><p>Other people that could have been involved:</p><ul><li>Anti-Castro Cuban exiles</li><li>Organized crime figures</li><li>Military-industrial complex interests</li><li>Intelligence agency operatives</li></ul>')
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
     ''')
     
     conn.commit()
@@ -77,11 +105,23 @@ init_db()
 
 @app.route('/')
 def home():
+<<<<<<< HEAD
+    return render_template('home.html')
+
+@app.route('/home/')
+def home_redirect():
+    return render_template('home.html')
+
+@app.route('/home/index.html')
+def home_index():
+    return render_template('home.html')
+=======
     return send_from_directory('../home', 'index.html')
 
 @app.route('/home/')
 def home_redirect():
     return send_from_directory('../home', 'index.html')
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
 
 @app.route('/lochan')
 def lochan_page():
@@ -113,17 +153,30 @@ def get_lochan_info():
     conn = sqlite3.connect('lochan_data.db')
     cursor = conn.cursor()
     
+<<<<<<< HEAD
+    cursor.execute('SELECT * FROM personal_info WHERE id = 1')
+=======
     cursor.execute('SELECT * FROM jfk_case_info WHERE id = 1')
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
     info = cursor.fetchone()
     
     conn.close()
     
     if info:
         return jsonify({
+<<<<<<< HEAD
+            'name': info[1],
+            'title': info[2],
+            'bio': info[3],
+            'skills': info[4],
+            'interests': info[5],
+            'contact_email': info[6]
+=======
             'basic_info': info[1],
             'stated_suspect': info[2],
             'issues_controversies': info[3],
             'what_i_believe': info[4]
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
         })
     else:
         return jsonify({'error': 'No data found'}), 404

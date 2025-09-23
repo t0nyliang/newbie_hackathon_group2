@@ -51,6 +51,8 @@ main {
   background-color: #1b5e20;
 }
 
+<<<<<<< HEAD
+=======
 .image-button {
   display: inline-block;
   text-decoration: none;
@@ -85,6 +87,7 @@ main {
   padding: 0;
 }
 
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
 footer {
   margin-top: 40px;
   padding: 10px 0;

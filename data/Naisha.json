@@ -1,0 +1,14 @@
+{
+    "name": "Big Tim",
+    "interest": "Food",
+    "images": [
+        {
+            "url": "images/naisha-dummy.png",
+            "caption": "Soft Buns"
+        },
+        {
+            "url": "images/photo2.jpg",
+            "caption": "Juicy Meat"
+        }
+    ]
+}

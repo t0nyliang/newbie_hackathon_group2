@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+/* JFK Assassination Analysis - Dark, Historical Theme */
+=======
 /* JFK Conspiracy Theme - Dark, Mysterious, and Smooth */
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
 
 * {
     margin: 0;
@@ -7,6 +11,15 @@
 }
 
 body {
+<<<<<<< HEAD
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    color: #e0e0e0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+=======
     font-family: 'Courier New', monospace;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
     color: #e0e0e0;
@@ -36,10 +49,23 @@ body::before {
     50% { opacity: 0.6; }
 }
 
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+<<<<<<< HEAD
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 0;
+    background: linear-gradient(45deg, #8B0000, #DC143C, #8B0000);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+=======
     position: relative;
     z-index: 1;
 }
@@ -53,6 +79,7 @@ header {
     border-radius: 15px;
     border: 2px solid #8b0000;
     box-shadow: 0 0 30px rgba(139, 0, 0, 0.3);
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
     position: relative;
     overflow: hidden;
 }
@@ -61,6 +88,41 @@ header::before {
     content: '';
     position: absolute;
     top: 0;
+<<<<<<< HEAD
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+header p {
+    font-size: 1.3rem;
+    color: #f0f0f0;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #ccc;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+/* Main Content */
+=======
     left: -100%;
     width: 100%;
     height: 100%;
@@ -99,10 +161,129 @@ header p {
 }
 
 /* Main content styling */
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
 main {
     margin-bottom: 40px;
 }
 
+<<<<<<< HEAD
+/* Info Section */
+.info-section {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 5px solid #DC143C;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.info-section h2 {
+    color: #DC143C;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-section h3 {
+    color: #ff6b6b;
+    font-size: 1.4rem;
+    margin: 20px 0 10px 0;
+    border-bottom: 2px solid #DC143C;
+    padding-bottom: 5px;
+}
+
+/* Analysis Sections */
+.analysis-sections {
+    display: grid;
+    gap: 30px;
+}
+
+.analysis-section {
+    background: rgba(20, 20, 20, 0.95);
+    border: 2px solid #444;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.analysis-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #DC143C, #ff6b6b, #DC143C);
+}
+
+.analysis-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(220, 20, 60, 0.2);
+}
+
+.analysis-section h2 {
+    color: #DC143C;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.analysis-section h3 {
+    color: #ff6b6b;
+    font-size: 1.5rem;
+    margin: 25px 0 15px 0;
+    border-left: 4px solid #DC143C;
+    padding-left: 15px;
+}
+
+.analysis-section p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 1.1rem;
+}
+
+.analysis-section ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.analysis-section li {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+.analysis-section strong {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+/* Button Styling */
+.btn, button.btn, a.btn {
+    background: #DC143C !important;
+    color: white !important;
+    padding: 15px 30px;
+    border: none !important;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Georgia', 'Times New Roman', serif;
+=======
 .info-section {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.9));
     border: 1px solid #444;
@@ -143,6 +324,7 @@ main {
     box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
 }
 
 .btn::before {
@@ -153,21 +335,132 @@ main {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+<<<<<<< HEAD
+    transition: left 0.5s ease;
+=======
     transition: left 0.5s;
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
 }
 
 .btn:hover::before {
     left: 100%;
 }
 
+<<<<<<< HEAD
+.btn:hover, button.btn:hover, a.btn:hover {
+    background: #8B0000 !important;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(220, 20, 60, 0.6);
+    color: white !important;
+=======
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(139, 0, 0, 0.5);
     background: linear-gradient(45deg, #cc0000, #ff0000);
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
 }
 
 .btn:active {
     transform: translateY(-1px);
+<<<<<<< HEAD
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.5);
+}
+
+/* Button Focus State */
+.btn:focus, button.btn:focus, a.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.3);
+}
+
+/* Override any default button styling */
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Ensure buttons with btn class get proper styling */
+button.btn, a.btn {
+    background: #DC143C !important;
+    color: white !important;
+    border: none !important;
+    padding: 15px 30px !important;
+    border-radius: 25px !important;
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3) !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+}
+
+/* Info Display */
+.info-display {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(40, 40, 40, 0.8);
+    border-radius: 10px;
+    border: 1px solid #555;
+}
+
+.info-item h3 {
+    color: #DC143C;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.info-item p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 2px solid #444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    header p {
+        font-size: 1.1rem;
+    }
+    
+    .analysis-section {
+        padding: 20px;
+    }
+    
+    .analysis-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .analysis-section h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Special Effects */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+=======
 }
 
 /* Analysis sections */
@@ -292,6 +585,7 @@ main {
     from {
         opacity: 0;
         transform: translateY(20px);
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
     }
     to {
         opacity: 1;
@@ -299,6 +593,18 @@ main {
     }
 }
 
+<<<<<<< HEAD
+.analysis-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.analysis-section:nth-child(1) { animation-delay: 0.1s; }
+.analysis-section:nth-child(2) { animation-delay: 0.2s; }
+.analysis-section:nth-child(3) { animation-delay: 0.3s; }
+.analysis-section:nth-child(4) { animation-delay: 0.4s; }
+
+/* Scrollbar Styling */
+=======
 /* Footer */
 footer {
     text-align: center;
@@ -386,6 +692,7 @@ html {
 }
 
 /* Scrollbar styling */
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -395,10 +702,48 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
+<<<<<<< HEAD
+    background: linear-gradient(45deg, #DC143C, #8B0000);
+=======
     background: linear-gradient(45deg, #8b0000, #cc0000);
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
     border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
+<<<<<<< HEAD
+    background: linear-gradient(45deg, #8B0000, #DC143C);
+}
+
+/* Typography Enhancements */
+.analysis-section p:first-of-type {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #f0f0f0;
+}
+
+.analysis-section ul li:first-child {
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+/* Historical Document Styling */
+.analysis-section {
+    position: relative;
+}
+
+.analysis-section::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(220, 20, 60, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.6;
+}
+=======
     background: linear-gradient(45deg, #cc0000, #ff0000);
 }
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
