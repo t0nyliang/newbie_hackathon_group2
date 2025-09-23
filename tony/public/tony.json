@@ -1,0 +1,70 @@
+{
+    "players": [
+        {
+            "id": 1,
+            "name": "Tony",
+            "gems": 120,
+            "unlockedEmotes": [
+                "laughing",
+                "cry",
+                "angry",
+                "thumbsup"
+            ]
+        }
+    ],
+    "emotes": [
+        {
+            "id": "laughin",
+            "name": "Laughing King",
+            "image": "images/laughing.png",
+            "cost": 0
+        },
+        {
+            "id": "cry",
+            "name": "Crying King",
+            "image": "images/cry.jpeg",
+            "cost": 0
+        },
+        {
+            "id": "angry",
+            "name": "Angry King",
+            "image": "images/angry.png",
+            "cost": 0
+        },
+        {
+            "id": "thumbsup",
+            "name": "Thumbs Up",
+            "image": "images/thumbsup.png",
+            "cost": 0
+        }
+    ],
+    "posts": [
+        {
+            "playerId": 1,
+            "emote": "laughingKing",
+            "time": "2025-09-18T16:20:00Z"
+        }
+    ],
+    "cards": [
+        {
+            "name": "Mega Knight",
+            "image": "images/megaknight.png",
+            "counter": "Inferno Tower"
+        },
+        {
+            "name": "Inferno Tower",
+            "image": "images/infernotower.jpg",
+            "counter": "Skeleton Army"
+        },
+        {
+            "name": "Skeleton Army",
+            "image": "images/skarmy.png",
+            "counter": "Wizard"
+        },
+        {
+            "name": "Wizard",
+            "image": "images/wizard.png",
+            "counter": "Mega Knight"
+        }
+    ]
+}

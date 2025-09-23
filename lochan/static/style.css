@@ -51,6 +51,43 @@ main {
   background-color: #1b5e20;
 }
 
+<<<<<<< HEAD
+=======
+.image-button {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.image-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-color: #4CAF50;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+
+.profile-btn-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+>>>>>>> 8b576a2cb876823436e0aeb9890c704275249bdb
 footer {
   margin-top: 40px;
   padding: 10px 0;
